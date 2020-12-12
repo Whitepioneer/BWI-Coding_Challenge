@@ -1,4 +1,7 @@
+
 public class Product {
+
+    /* values */
     private String name;
     private int quantity;
     private double weight;
@@ -23,8 +26,12 @@ public class Product {
         this.taken = taken;
     }
 
-    //Parameter Methods (set,get)
-    //name
+
+    /* parameter methods
+     * get: get the values of the product
+     * set: set the values of the product */
+
+    /* name of the product */
     public String getName() {
         return name;
     }
@@ -33,7 +40,8 @@ public class Product {
         name = n;
     }
 
-    //quantity
+
+    /* quantity of the product */
     public int getQuantity() {
         return quantity;
     }
@@ -42,7 +50,8 @@ public class Product {
         quantity = q;
     }
 
-    //weight
+
+    /* weight of the product */
     public double getWeight() {
         return weight;
     }
@@ -51,7 +60,8 @@ public class Product {
         weight = w;
     }
 
-    //utility
+
+    /* utility of the product */
     public int getUtility() {
         return utility;
     }
@@ -60,7 +70,8 @@ public class Product {
         utility = u;
     }
 
-    //taken
+
+    /* is the product taken? */
     public boolean getTaken() {
         return taken;
     }
@@ -70,4 +81,3 @@ public class Product {
     }
 
 }
-
