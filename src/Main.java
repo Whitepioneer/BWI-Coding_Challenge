@@ -12,10 +12,8 @@ public class Main {
         double d2 = 85.7;
 
         //transporter with drivers (t1 with d1, t2 with d2)  --> max capacity with drivers
-        double t1 = tr1_max - d1;
-        double t2 = tr2_max - d2;
-
-        //Gesamtgewicht = Gewicht pro Produkt * Anzahl(Bsp.: 205*2,451=502,455)
+        double t1 = tr1_max - d1;  //t1=1027.6
+        double t2 = tr2_max - d2;  //t2=1014.3
 
 
         //Product list
@@ -32,47 +30,58 @@ public class Main {
                 new Product("Tablet outdoor groß", 370, 1.980, 68, false)
         };
 
-        double loaded_t1 = loading(t1, productList);
-        System.out.println("Taken T1: " + loaded_t1);
 
-        double loaded_t2 = loading(t2, productList);
-        System.out.println("Taken T2: " + loaded_t2);
-
-    }
-
-    public static double loading(double t_weight, Product[] load) {
-        int totalUtility = 0;
-        double totalWeight = 0;
-        int totalQuantity = 0;
-        boolean isTaken = false;
-
-        for (int i = 0; i < load.length - 1; i++) {
-            if ((load[i].getUtility() / load[1].getWeight()) <= (load[i + 1].getUtility() / load[1 + 1].getWeight())) {
-                Product a = load[i];
-                Product b = load[i + 1];
-                load[i + 1] = a;
-                load[i] = b;
+        //sort list by utility per weight
+        for (int i = 0; i < productList.length - 1; i++) {
+            if ((productList[i].getUtility() / productList[i].getWeight()) <= (productList[i + 1].getUtility() / productList[i + 1].getWeight())) {
+                Product a = productList[i];
+                Product b = productList[i + 1];
+                productList[i + 1] = a;
+                productList[i] = b;
             }
         }
 
+        //chosen Transporter
+        String currentTransporter;
+
+        //transport list transporter 1
+        currentTransporter = "Transporter 1";
+        System.out.println("Transportliste " + currentTransporter + "\n");
+        double loaded_t1 = loading(t1, productList, currentTransporter);
+        System.out.println("\n" + "Optimalernutzwert " + currentTransporter + ": " + loaded_t1 + "\n" + "\n");
+
+        //transport list transporter 2
+        currentTransporter = "Transporter 2";
+        System.out.println("Transportliste " + currentTransporter + "\n");
+        double loaded_t2 = loading(t2, productList, currentTransporter);
+        System.out.println("\n" + "Optimalernutzwert " + currentTransporter + ": " + loaded_t2 + "\n" + "\n");
+
+    }
+
+    public static double loading(double t_weight, Product[] load, String currentTransporter) {
+        int totalUtility = 0;
+        double totalWeight = 0;
         int i = 0;
+        int currentQuantitiy = 0;
 
         while (totalWeight <= t_weight && i < load.length) {
             if (load[i].getTaken() == false) {
+
                 if (load[i].getQuantity() <= 0 ^ totalWeight + load[i].getWeight() > t_weight) {
                     load[i].setTaken(true);
+                    System.out.println("Es wird das Produkt: " + load[i].getName() + " " + currentQuantitiy + " mal in " + currentTransporter + " gelegt!");
                     i++;
-                    System.out.println("2: i++");
+                    currentQuantitiy = 0;
                     load[i - 1].setTaken(false);
-
 
                 } else if (totalWeight + load[i].getWeight() <= t_weight) {
                     totalWeight = totalWeight + load[i].getWeight();
                     totalUtility = totalUtility + load[i].getUtility();
-                    System.out.println("1: " + load[i].getQuantity());
+                    //System.out.println("1: " + load[i].getQuantity());
+                    currentQuantitiy = currentQuantitiy + 1;
                     load[i].setQuantity(load[i].getQuantity() - 1);
-
                 }
+
             }
         }
 
@@ -80,3 +89,5 @@ public class Main {
     }
 
 }
+ //genauer Kommentieren in loading
+//reihenfolge nutzwerte überprüfen!!!!!!!!!!!!!!
