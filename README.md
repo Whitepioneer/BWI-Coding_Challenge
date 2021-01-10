@@ -1,14 +1,14 @@
 # BWI-Coding_Challenge
-##Nutzung:
+## Nutzung:
 - Betriebssystem: Windows
 - Programm IntelliJ 2020.3
 - Projekt SDK: 11.0.4.
 
-##Ausführen:
+## Ausführen:
 1. Java-Datei öffnen
 2. Main Methode in Klasse Main ausführen
 
-##Inhalt der Klassen:
+## Inhalt der Klassen:
 Main-Klasse: 
 - alle Variablen
 - Produkt Liste wird eingelesen (hier sind die verwendeten Produkte einles- und beartbeitbar)
@@ -31,10 +31,10 @@ Product-Klasse:
 - für alle Prarameter get und set Methode um Werte von den Prdoukten zu bekomen und um diese zu ändern
 
 
-##Algorthimuswahl:
+## Algorthimuswahl:
 Es wurde ein Greedy-Algorithmus gewählt, da dieser einfach umzusetzten ist, und schnell ein optimales Ergebiss liefert. Durch die vorsortierung der Lsite wird das Problem des Greedy-Algoritmuses kompensiert, dass er sonst immer ein lokales Optimum wählt. So wird hier ein gloabels Optimum zurückgegeben.
 
-##Nutzwerte:
+## Nutzwerte:
 - Transporter 1: 44764
 - Transporter 2: 29116
 - Gesamt: 73880
