@@ -32,10 +32,8 @@ public class Main {
 
 
         /* sort list by utility per weight */
-        //if (productList[1].getUtility() <= productList[2].getUtility() && productList[2].getUtility() <= productList[3].getUtility() && productList[3].getUtility() <= productList[4].getUtility() && productList[4].getUtility() <= productList[5].getUtility() && productList[5].getUtility() <= productList[6].getUtility() && productList[6].getUtility() <= productList[7].getUtility() && productList[7].getUtility() <= productList[8].getUtility() && productList[8].getUtility() <= productList[9].getUtility() && productList[9].getUtility() <= productList[10].getUtility()) {
         for (int s = 0; s < 10; s++) {
             /* sort ten times, because the list has ten elements */
-            //richtigen sortier-algorthmus wählen????
 
             for (int i = 0; i < productList.length - 1; i++) {
                 /* the element can be moved to the end of the list */
@@ -47,10 +45,8 @@ public class Main {
                     Product swap2 = productList[i + 1];
                     productList[i + 1] = swap1;
                     productList[i] = swap2;
-                    //System.out.println("TAUSCH!" + productList[i].getName());
                 }
             }
-            //System.out.println("Liste ist perfekt sortiert");
         }
 
         /* chosen Transporter */
@@ -113,7 +109,6 @@ public class Main {
 
                     totalWeight = totalWeight + load[i].getWeight();                  /* new total weight is the old total weight with the weight of the current element  */
                     totalUtility = totalUtility + load[i].getUtility();               /* new total utility is the old total utility with the utility of the current element  */
-                    //System.out.println("1: " + load[i].getQuantity());
                     currentQuantity = currentQuantity + 1;                            /* quantity of loaded units of this product increases by one */
                     load[i].setQuantity(load[i].getQuantity() - 1);                   /* quantity of maximum loadable units of this product decreases by one */
                 }
