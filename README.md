@@ -16,13 +16,13 @@ Main-Klasse:
 - Transporter werden eingelsen
 - für jeden transporter wird der Greedy-Algorithmus einzeln aufrgerufen
 - Greedy-Algorithmus:
-              - Überprüfen, ob aktuelles Gewicht unter maximal möglichem Gewicht liegt und ob das letzte Element der Liste noch nicht erreicht ist 
-              - Überprüfen, ob das Produkt noch Verfügbar ist
-              - Überprüfen, ob die Menge des aktuellen Produkts 0 oder ob man das Maximalgewicht mit dem neuen einladen des Produkts überschreitet
-              - ist dies der Fall --> Produktname, eingeladene Menge und Taransporter in den es eingeladen wird, wird in Konsole ausgegeben, Verfügbarkeit wird für den aktuellen Tarnsporter auf false gesetzt
-              - sonst Überprüfen, ob dazukommende Gewicht mit dem aktuellen Gewicht noch nicht das Maximalgewicht überschreitet
-              - in diesem Fall, werden Gewicht, Nutzwert und Menge des aktullen Produkt auf den Gesamtwert des Transporter addiert
-              - schließlich wird der Gesamtnutzen des Transporter zurückgegeben
+              1. Überprüfen, ob aktuelles Gewicht unter maximal möglichem Gewicht liegt und ob das letzte Element der Liste noch nicht erreicht ist 
+              2. Überprüfen, ob das Produkt noch Verfügbar ist
+              3. Überprüfen, ob die Menge des aktuellen Produkts 0 oder ob man das Maximalgewicht mit dem neuen einladen des Produkts überschreitet
+              4. ist dies der Fall --> Produktname, eingeladene Menge und Taransporter in den es eingeladen wird, wird in Konsole ausgegeben, Verfügbarkeit wird für den aktuellen Tarnsporter auf false gesetzt
+              5. sonst Überprüfen, ob dazukommende Gewicht mit dem aktuellen Gewicht noch nicht das Maximalgewicht überschreitet
+              6. in diesem Fall, werden Gewicht, Nutzwert und Menge des aktullen Produkt auf den Gesamtwert des Transporter addiert
+              7. schließlich wird der Gesamtnutzen des Transporter zurückgegeben
 - Transportliste und GEsamtnutzen des Transporters werden in KJonsole ausgegeben
 - Gesamtnutzen wird in Konsole ausgegeben
 
