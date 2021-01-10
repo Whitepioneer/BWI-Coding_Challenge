@@ -74,7 +74,6 @@ public class Main {
         /* total utility */
         double loaded_total = loaded_t1 + loaded_t2;
         System.out.println("Der gesamte optimale Nutzwert beider Transporter ist " + loaded_total);
-
     }
 
 
@@ -116,5 +115,4 @@ public class Main {
         }
         return totalUtility;               /* return the total utility of the products in the current transporter */
     }
-
 }

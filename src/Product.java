@@ -79,5 +79,4 @@ public class Product {
     public void setTaken(boolean t) {
         taken = t;
     }
-
 }
